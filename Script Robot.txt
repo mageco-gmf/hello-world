@@ -16,25 +16,25 @@ ${TIMEOUT}    120s
 
 *** Test Cases ***
 M11-CT52_Creer un nouveau site avec confirmation
-    Log    Summary: Tester l'option de confirmation lors de la création d'un site
+    Log    Summary: Tester l'option de confirmation lors de la crÃ©ation d'un site
     Log    Connexion
     Connect
     ${vCompleteDate}=    Init Date
     
-    Log    1- Création du site
-    Create Site    G2_SIT1001-${vCompleteDate}    g2sit1001-${vCompleteDate}    TestCase 01:\nCréer un nouveau site avec confirmation (cas nominal)
+    Log    1- CrÃ©ation du site
+    Create Site    G2_SIT1001-${vCompleteDate}    g2sit1001-${vCompleteDate}    TestCase 01:\nCrÃ©er un nouveau site avec confirmation (cas nominal)
     Confirm Creation    G2_SIT1001-${vCompleteDate}
     
-    Log    2- Vérifier les données du site créés
+    Log    2- VÃ©rifier les donnÃ©es du site crÃ©Ã©s
     Verify Site    G2_SIT1001-${vCompleteDate}    Public
-    Verify MesSites    G2_SIT1001-${vCompleteDate}    TestCase 01: Créer un nouveau site avec confirmation (cas nominal)
+    Verify MesSites    G2_SIT1001-${vCompleteDate}    TestCase 01: CrÃ©er un nouveau site avec confirmation (cas nominal)
     Verify Favourites    G2_SIT1001-${vCompleteDate}
     
-    Log    3- Première Déconnexion
+    Log    3- PremiÃ¨re DÃ©connexion
     Logout
     Close Browser
     
-    Log    4- Vérifier l'accès au site par son URL
+    Log    4- VÃ©rifier l'accÃ¨s au site par son URL
     Verify Url    ${vLogin}site/g2sit1001-${vCompleteDate}        G2_SIT1001-${vCompleteDate}    Public
     sleep    3s
     click    id=HEADER_SITES_MENU_text
@@ -42,12 +42,13 @@ M11-CT52_Creer un nouveau site avec confirmation
     click    link=G2_SIT1001-${vCompleteDate}
     Wait Until Element Is Visible    //*[@id="HEADER_TITLE"]/span/a
     
-    Log    5- Suppression du site et déconnexion
+    Log    5- Suppression du site et dÃ©connexion
     Delete Site
     Logout
 
 
-*** Mots clés ***
+*** Mots clÃ©s ***
+    # doit avoir des parametres
     Connect
     Set Selenium Timeout    ${TIMEOUT}
     #Set Selenium Speed    0.1 second
