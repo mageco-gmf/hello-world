@@ -46,4 +46,4 @@ M11-CT52_Creer un nouveau site avec confirmation
     Delete Site
     Logout
 
-
+*** Keywords ***
