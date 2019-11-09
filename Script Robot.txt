@@ -47,17 +47,3 @@ M11-CT52_Creer un nouveau site avec confirmation
     Logout
 
 
-*** Mots clés ***
-    # doit avoir des parametres
-    Connect
-    Set Selenium Timeout    ${TIMEOUT}
-    #Set Selenium Speed    0.1 second
-    Open Browser    ${vLogin}    ${vBrowser}
-    Maximize Browser Window
-    Title Should Be    ${vTitle}
-    #Input Text    page_x002e_components_x002e_slingshot-login_x0023_default-username    ${vUsername}
-    Input Text    id=page_x002e_components_x002e_slingshot-login_x0023_default-username    ${vUsername}
-    Input Text    id=page_x002e_components_x002e_slingshot-login_x0023_default-password    ${vPassword}
-    Click Button    id=page_x002e_components_x002e_slingshot-login_x0023_default-submit-button
-    Wait Until Element Is Visible    xpath://*[@id="HEADER_TITLE"]/span
-    Element Text Should Be    xpath://*[@id="HEADER_TITLE"]/span    Tableau de bord de Administrator
